@@ -1,38 +1,138 @@
-.App {
+body {
+  background-color: #dce6e3;
+}
+
+h2 {
+  display: block;
+  margin-top: 7rem;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 50px;
+  border: 5px solid #adacac;
+  border-radius: 30px 0px 30px 0px;
+  padding: 10px 0px 5px 0px;
   text-align: center;
+  font-family: "Do Hyeon", sans-serif;
+  font-size: 38px;
+  color: #575757;
+  background-color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pagination button {
+  background-color: black;
+  color: white;
+  padding: 6px 15px 6px 15px;
+  text-decoration: none;
+  border-radius: 50%;
+  font-size: 15pt;
+  border-style: none;
+  outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.pagination button:hover {
+  background-color: #59d9b9;
+  color: black;
+  transition: 0.3s;
+  border-style: none;
+  cursor: pointer;
+}
+
+.pagination button:active {
+  outline: none;
+}
+
+.pagination button.previous {
+  float: left;
+  margin-top: 7em;
+  margin-left: 6vw;
+}
+
+.pagination button.next {
+  float: right;
+  margin-top: 7em;
+  margin-right: 6vw;
+}
+
+@media only screen and (max-width: 1024px) {
+  .viewImage img.img3 {
+    display: none;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media only screen and (max-width: 768px) {
+  .viewImage img.img3 {
+    display: none;
+  }
+  .viewImage img.img2 {
+    display: none;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+div.viewImage {
+  display: table;
+  position: absolute;
+  margin-top: 10em;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-@keyframes App-logo-spin {
+img {
+  display: inline-block;
+  max-height: 200px;
+  height: 200px;
+  width: auto;
+  margin: 1vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+@-webkit-keyframes fade {
   from {
-    transform: rotate(0deg);
+    opacity: 0.4;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.FileInput input[type="file"] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.FileInput label {
+  position: absolute;
+  display: block;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 15em;
+  width: 120px;
+  border: 5px solid #adacac;
+  padding: 7px 0px 2px 0px;
+  text-align: center;
+  font-family: "Do Hyeon", sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  color: #575757;
+  background-color: white;
+  cursor: pointer;
+}
+
+.FileInput label:hover {
+  background-color: #e8e8e8;
 }
