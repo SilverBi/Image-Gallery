@@ -4,13 +4,12 @@ import data from "./data";
 import ViewImage from "./components/viewImage";
 //import axios from "axios";
 
-
 class Header extends Component {
   render(){
     return (
-      <header>
+      <div className="header">
         <h2>사진갤러리</h2>
-      </header>
+      </div>
     );
   }
 }
@@ -30,7 +29,6 @@ class App extends Component {
     
     this.handleChange = this.handleChange.bind(this)
   }
-
 
 /* Pagination */
 prePagination = () => {
@@ -59,10 +57,6 @@ prePagination = () => {
       property3: this.state.properties[this.state.property3.index-1]
     })
   }
-  console.log("propertiex.length : " + this.max_id);
-  console.log(this.state.property1.index);
-  console.log(this.state.property2.index);
-  console.log(this.state.property3.index);
 }
 
   nextPagination = () => {
@@ -92,26 +86,19 @@ prePagination = () => {
         property3: this.state.properties[this.state.property3.index+1]
       })
     }
-    console.log("propertiex.length : " + this.max_id);
-    console.log(this.state.property1.index);
-    console.log(this.state.property2.index);
-    console.log(this.state.property3.index);
   }
 
 
   handleChange(event) {
     this.max_id=this.max_id+1;
-    console.log("max_id : " + this.max_id);
+
     var _properties = this.state.properties.concat(
       {index:this.max_id, picture:URL.createObjectURL(event.target.files[0])}
     )
-    console.log("properties : " + this.state.properties);
-    console.log("_properties : " + _properties);
 
     this.setState({
       properties:_properties
     });
-    console.log(_properties);
   }
 
   render() {
@@ -124,12 +111,12 @@ prePagination = () => {
         <div className="pagination">
           <button className="previous"
             onClick={()=>this.prePagination()}>
-              ❮
+              {"<"}
           </button>
 
           <button className="next"
             onClick={()=>this.nextPagination()}>
-              ❯
+              {">"}
           </button>
         </div>
 
@@ -140,7 +127,10 @@ prePagination = () => {
         </div>
 
         <div className="FileInput">
-          <label htmlFor="ex_file">업로드</label>
+          <div className="inputBox">
+            <label htmlFor="ex_file">업로드
+              </label>
+          </div>
           <input
           type="file"
           id="ex_file"
