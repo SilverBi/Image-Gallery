@@ -1,6 +1,7 @@
 body {
   background: #ffffff 0% 0% no-repeat padding-box;
   opacity: 1;
+  cursor: default;
 }
 
 div.header {
@@ -12,11 +13,13 @@ div.header {
   border: 4px solid #707070;
   border-radius: 16px 0px;
   opacity: 1;
+  margin: 0px;
 }
 
 div.header h2 {
-  top: 72px;
-  left: 460px;
+  position: absolute;
+  top: 8px;
+  left: 21px;
   width: 105px;
   height: 27px;
   text-align: left;
@@ -24,7 +27,7 @@ div.header h2 {
   letter-spacing: 0px;
   color: #707070;
   opacity: 1;
-  margin: 0 auto;
+  margin: 0px;
 }
 
 .pagination button {
@@ -34,10 +37,11 @@ div.header h2 {
   border-radius: 50%;
   border-style: none;
   outline: none;
+  background: #000000 0% 0% no-repeat padding-box;
 }
 
 .pagination button:hover {
-  background-color: #59d9b9;
+  background: #04b69d 0% 0% no-repeat padding-box;
   color: black;
   transition: 0.3s;
   border-style: none;
@@ -54,7 +58,6 @@ div.header h2 {
   left: 77px;
   width: 20px;
   height: 20px;
-  background: #000000 0% 0% no-repeat padding-box;
   opacity: 1;
 }
 
@@ -64,7 +67,6 @@ div.header h2 {
   left: 927px;
   width: 20px;
   height: 20px;
-  background: #04b69d 0% 0% no-repeat padding-box;
   opacity: 1;
 }
 
@@ -139,10 +141,55 @@ img:hover {
   opacity: 1;
   padding: 7.5px 38.5px 7.5px 38.5px;
   border: 4px solid #707070;
+  cursor: pointer;
 }
 
 .FileInput label:hover {
   background-color: #e8e8e8;
+}
+
+div.name1 {
+  position: absolute;
+  top: 373px;
+  left: 259px;
+  width: 98px;
+  height: 27px;
+  text-align: left;
+  font: normal normal normal 20px/27px Segoe UI;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+div.name2 {
+  position: absolute;
+  top: 373px;
+  left: 529px;
+  width: 98px;
+  height: 27px;
+  text-align: left;
+  font: normal normal normal 20px/27px Segoe UI;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+  margin:0px;
+}
+
+div.name3 {
+  position: absolute;
+  top: 373px;
+  left: 799px;
+  width: 98px;
+  height: 27px;
+  text-align: left;
+  font: normal normal normal 20px/27px Segoe UI;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+div.fileName {
+  cursor: default;
 }
 
 /*MQ*/
@@ -152,7 +199,7 @@ img:hover {
   }
 
   div.header h2 {
-    left: 332px;
+    left: 20px;
   }
 
   .pagination button.previous {
@@ -187,6 +234,24 @@ img:hover {
     top: 410px;
     left: 312px;
   }
+
+  div .fileName .name1 {
+    top: 323px;
+    left: 267px;
+    width: 98px;
+    height: 27px;
+  }
+
+  div .fileName .name2 {
+    top: 323px;
+    left: 487px;
+    width: 98px;
+    height: 27px;
+  }
+
+  div .fileName .name3 {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -195,7 +260,7 @@ img:hover {
   }
 
   div.header h2 {
-    left: 220px;
+    left: 20px;
   }
 
   .pagination button.previous {
@@ -218,6 +283,7 @@ img:hover {
   .viewImage img.img3 {
     display: none;
   }
+
   .viewImage img.img2 {
     display: none;
   }
@@ -225,5 +291,20 @@ img:hover {
   .FileInput label {
     top: 360px;
     left: 200px;
+  }
+
+  div .fileName .name1 {
+    top: 286px;
+    left: 275px;
+    width: 68px;
+    height: 19px;
+  }
+
+  div .fileName .name2 {
+    display: none;
+  }
+
+  div .fileName .name3 {
+    display: none;
   }
 }
