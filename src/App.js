@@ -7,47 +7,44 @@ class App extends Component {
     super(props);
 
     this.max_id = 2;
-
+    
     this.state = {
       images: ImageData.images,
       firstImage: ImageData.images[0],
       secondImage: ImageData.images[1],
-      thirdImage: ImageData.images[2],
+      thirdImage: ImageData.images[2]
     }
-    
     this.handleChange = this.handleChange.bind(this)
   }
 
+
 /* Pagination */
 prePagination = () => {
-  const endId = this.max_id
-  const startId = 0;
   const copyPrevArray = [];
 
-  copyPrevArray[endId] = this.state.images[startId];
-
-  for (var i=0; i<endId; i++) {
-    copyPrevArray[i] = this.state.images[i+1];
-  }
+  copyPrevArray[this.max_id] = this.state.images[0];
   
+    for (var i=0; i<this.max_id; i++) {
+      copyPrevArray[i] = this.state.images[i+1];
+    }
+
   this.setState({
     images: copyPrevArray,
     firstImage: copyPrevArray[0],
     secondImage: copyPrevArray[1],
-    thirdImage: copyPrevArray[2]
+    thirdImage: copyPrevArray[2],
   })
 }
 
 nextPagination = () => {
-    const endId = this.max_id
     const copyNextArray = [];
   
-    copyNextArray[0] = this.state.images[endId];
+    copyNextArray[0] = this.state.images[this.max_id];
   
-    for (var i=1; i<=endId; i++) {
+    for (var i=1; i<=this.max_id; i++) {
       copyNextArray[i] = this.state.images[i-1];
     }
-  
+
     this.setState({
       images: copyNextArray,
       firstImage: copyNextArray[0],
@@ -59,11 +56,22 @@ nextPagination = () => {
   handleChange(event) {
     this.max_id=this.max_id+1;
 
+    this.state.images.sort(function (a, b) {
+      if (a.index > b.index) {
+        return 1;
+      }
+      if (a.index < b.index) {
+        return -1;
+      }
+      return 0;
+    });
+
     var _images = this.state.images.concat(
       {index:this.max_id, picture:URL.createObjectURL(event.target.files[0]), name:event.target.files[0].name}
     )
+    
     this.setState({
-      images:_images
+      images:_images,
     });
   }
 
